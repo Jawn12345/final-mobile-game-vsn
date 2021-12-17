@@ -4,13 +4,14 @@ Chapter One: First Day
 -> one
 
 === one ===
+#black
 Ding ding ding! Ding ding ding!
 ("What's that sound???")
 DINGGG!!!
 "Ugh...what's that sound?"
 + You reached out to grab the source of the sound.
     -> grab
-+ [You reach out.]
++ You reach out.
     -> crash
     
 === grab ===    
@@ -19,13 +20,16 @@ It was your alarm clock.
     -> late
 
 === crash ===
-CRASHHHHH.                                        
+CRASHHHHH.    
+#dorm
 You open your eyes to see your beloved mug in shatters along the wooden floor.
 "Oh, just wonderful." 
     -> late
 
 === late ===
-15 minutes later...                            
+#black
+15 minutes later... 
+#dorm
 You jump up with a panic look on your face."
 "Oh nooooo!!"
 You grab your phone to check the time.
@@ -34,7 +38,9 @@ You grab your phone to check the time.
 "I'm going to be late for my first day of classes..."
 You run to the bathroom to wash up.
 
-15 minutes later...                                 
+#black
+15 minutes later...  
+#park
 You're running down the road to your first college class ever.
 You are a first year Game Design student attending Fall University.
 Luckily, you were living on campus. Otherwise, attending your first college class would have been a pipe dream.
@@ -87,10 +93,12 @@ Feeling bad, you apologize and you both head on your merry way.
     -> class_0 
 
 === class_0 ===
+#black
 You arrived at the entrance to your class.
 ("Maybe no one will notice if I quietly sneak in.")
 You slowly push the door open. It CREAKS open.
 ("Well so much for that...")
+#lecture
 Hundreds of eyes turn to stare at you as you walk through the door. 
 You start feeling your ears turn red. 
 ("Should have expected this for a lecture hall...")
@@ -150,7 +158,7 @@ She nods and walks off.
 === class_0_ending === 
 ("I still have some time before my next class. I wonder if I should head back to my dorm or to the library.")
 
-* "I'll head to library then."
+* "I'll head to the library then."
     -> library_0
 * "I'll head back to my dorm then."
     -> dorm_0
@@ -164,15 +172,15 @@ The school's library has 6 floors including the basement. The lobby and the base
     -> lib_fl_options_1
 
 === lib_fl_options_1 ===
-* 2nd floor
+* [2nd floor]
     -> library_2fl
-* 3rd floor
+* [3rd floor]
     -> library_3fl
-* 4th floor
+* [4th floor]
     -> library_4fl
-* 4th floor
+* [4th floor]
     -> library_4fl
-* 5th floor
+* [5th floor]
     -> library_5fl
 
 === library_2fl ===
@@ -185,50 +193,156 @@ You took the elevator to the 3rd floor of the library and went into one of the p
 As you take out your notebook to start reviewing your notes, you start to hear noises coming from another room. 
 "Who's a good boy? Who's the bestest boy?"
 That was an interesting phrase...should you go take a look?
-* Find out where the sound is coming from. 
+* [Find out where the sound is coming from.]
     -> library_3fl_opt1
-* Continue studying. 
+* [Continue studying.]
     -> library_3fl_opt2
 
-=== library_4fl ===
-You took the elevator to the 4th floor of the library and went into one of the private study rooms.
+    = library_3fl_opt1 
+    You walk around looking at the study rooms around you before you happen upon the source of the commotion.
+    It was a student talking to his...
+    stuff monkey...and was petting it? 
+    You lowkey wished you did not find out (maybe highkey). 
+    You head back to your study room but lack the motivation to start studying. 
+    You end up pulling out your phone and start browsing social media to rid the earlier image from your mind. 
+        ->head_to_class_1
+        
+    = library_3fl_opt2 
+    * {class_0_back}
+        -> if_class_0_bad
+    * {class_0_front and not class_0_front_bad} 
+        -> if_class_0_good
+    * {class_0_front_bad} 
+        -> if_class_0_neutral
+        
+        = if_class_0_good 
+        You start reviewing the Physics notes that you missed during the first part of class. 
+        The notes that the girl provided were really clean and helpful. 
+        You can't help but wonder what her name was...
+        You slap yourself with both hands. 
+        "ALRIGHT, LET'S ACE THIS CLASS!"
+        "SHUT UP!" someone screamed from another room. 
+        Embarrassed, you go back to reviewing your notes. 
+        -> head_to_class_1
+        = if_class_0_bad
+        You tried reviewing your Physics notes but it was not successful. You should have paid more attention in class. 
+            -> head_to_class_1
+        = if_class_0_neutral
+        You review the notes that you took during the second half of class. It was decently successful, despite not having any notes for the first half of class.
+        -> head_to_class_1
 
-    -> ending
+
+=== library_4fl ===
+You took the elevator to the 4th floor of the library and start looking for an available study room. 
+* {scenic_good}
+    -> library_james
+* {not scenic_good}
+    -> library_no_space
+    
+    = library_no_space
+    You walked around for a few minutes, unable to find one.
+    You decided to head to another floor to look for space. 
+    You actually spent all of your time looking around for an available space that by the time you finally found one, it was time to head to your next class. 
+    -> class_1
+    
+    = library_james
+    You walked around for a few minutes, unable to find one. Dejected, you start heading towards the elevator when...
+    "Hey {playerName}!" Someone called out.
+    You turn around to find James standing behind you with a laptop tuck under his beefy arms. 
+    "Are you looking for a room," he asks. 
+    "Yeah, I am."
+    "My project meeting just ended with my team and they just left the room we reserved."
+    "Would you like to share a room with me?" He asks as he raises one of his hands and places them behind his head. 
+    * "Yes, definitely."
+        -> library_james_yes
+    * "You're so HOT!"
+        -> library_james_embarrassed
+    
+    == library_james_yes
+    "I would LOVE to share a room with you...not to be weird or anything."
+    He laughs and turns around, motioning you to follow him. 
+        -> library_james_continue
+    == library_james_embarrassed
+    "Wait what?" He sounds startled. 
+    He quickly turns around. "I'm going to take that as a yes." 
+    Wait...was that your imagination or did his ear turn a bit pink. 
+        -> library_james_continue
+    == library_james_continue
+    He leads you to a group study room and opens the door for you. 
+    You walk inside and he follows, closing the door behind him. 
+    You both sit down, directly across from one another. There was a minute of awkward silence between the two of you before he started talking.
+    "So what brings you to the library?"
+    "I wanted to study Physics for a bit."
+    "Already? Today's literally the first day of classes."
+    "Well I was late to class when you knocked me over this morning. This is to make up for it."
+    "Ah, no wonder you look so studious. You don't look the part." He chuckles. 
+    "Huh? What's that supposed to mean?" You casted an annoyed glare at him. "But look at you, having a meeting on the first day of class too."
+    "Oh, I'm actually a TA. We were just meeting to finalize how project teams were going to work for the class."
+    "Oh." You did not expect that response. "Well..I'm going to study my Physics notes for a bit"
+    You reached into your bag and accidentally pulled out your journal. 
+    James raises an eyebrow. "That does not look like you're studying to me." 
+    "I just grabbed the wrong thing. That's all." You pulled out the correct notebook this time and ACTUALLY start studying. 
+    "Is that Physics? I can help you study. I was a pretty good Physics student." 
+    "Uhh sure."
+    He moves over to sit next to you and gives you useful tips to help you memorize concepts...
+    
+    Before you knew it, it was time to head to your next class. You had a lot of fun talking to James. 
+    "I have to head to my next class now." 
+    You pack your things and start walking towards the door.
+    "Wait! I also have to leave now." James exclaims as he hurriedly packs his stuff. 
+    You leave the room together and take the elevator down to the lobby. 
+    As you're about to walk through the doors, you slip and fall right to James's arms. 
+    You stare at each for a solid 20 seconds. 
+    "Woah! Are you okay?" He asks. 
+    "Yeah. I'm fine. I really have to get to class now." You quickly pull yourself upright and starts walking away. 
+    You take a quick glance behind you, only to see his startled face. "
+    -> class_1
+    
 === library_5fl ===
 You took the elevator to the 5th floor of the library and went into one of the private study rooms. 
-    -> ending
-
-=== library_3fl_opt1 ===
-You walk around looking at the study rooms around you before you happen upon the source of the commotion.
-It was a student talking to his...
-stuff monkey...and was petting it? 
-You lowkey wished you did not find out (maybe highkey). 
-    ->ending
+* {class_0_back}
+    -> if_class_0_bad
+* {class_0_front and not class_0_front_bad} 
+    -> if_class_0_good
+* {class_0_front_bad} 
+    -> if_class_0_neutral
     
-=== library_3fl_opt2 ===
-{class_0_back} 
-    -> library_3fl_opt2_bad
-{class_0_front and not class_0_front_bad} 
-    -> library_3fl_opt2_good
-{class_0_front_bad} 
-    -> library_3fl_opt2_neutral
+    = if_class_0_good 
+    You start reviewing the Physics notes that you missed during the first part of class. 
+    The notes that the girl provided were really clean and helpful. 
+    You can't help but wonder what her name was...
+    You slap yourself with both hands. 
+    "ALRIGHT, LET'S ACE THIS CLASS!"
+    "SHUT UP!" someone screamed from another room. 
+    Embarrassed, you go back to reviewing your notes. 
+    -> head_to_class_1
+    = if_class_0_bad
+    You tried reviewing your Physics notes but it was not successful. You should have paid more attention in class. 
+        -> head_to_class_1
+    = if_class_0_neutral
+    You review the notes that you took during the second half of class. It was decently successful, despite not having any notes for the first half of class.
+    -> head_to_class_1
 
-    -> ending
 
-=== library_3fl_opt2_good ===
-You start reviewing the Physics notes that you missed during the first part of class. 
-    -> ending
-    
-=== library_3fl_opt2_bad ===
-You tried reviewing the your Physics notes but it was not successful. You should have paid more attention in class. 
-    -> ending
-    
-=== library_3fl_opt2_neutral ===
-
-    -> ending
+=== head_to_class_1 ===
+Before you knew it, it was time to head to your next class. 
+    -> class_1
     
 === dorm_0 ===
+When you arrive at your dorm and was about to head into your room, you see your suitemate, and only friend, pop his head out of his room. 
+"Hey! Welcome back. I heard you scrambling this morning. Is everything okay? How was your first class? Do you need coffee?"
+"Woah woah woah! Slow down, Josh. But yes, good, and no to your questions."
+"If you need anything just text me. I have class now, so I'm heading off. See ya!" 
+And he's gone. 
+Your only friend and suitemate, Josh, is a really popular guy. He's super charismatic, charming, and friendly. 
+That's how he became friends with you - your poor, single, lonesome butt. A very nice butt though. 
+Sighing, you head back to your room to do the Physics homework your Professor already assigned. 
+Unfortunately, you got distracted by corgi butts and spent the whole time looking at them. 
+-> head_to_class_1
 
+=== class_1 ===
+#classroom
+You arrived at the entrance of your next class. 
 -> ending
 
 === ending

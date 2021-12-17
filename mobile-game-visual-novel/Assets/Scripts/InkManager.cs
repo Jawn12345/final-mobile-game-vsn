@@ -1,6 +1,7 @@
 using Ink.Runtime;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class InkManager : MonoBehaviour
 {
@@ -15,11 +16,15 @@ public class InkManager : MonoBehaviour
     private GameObject _textBox;
 
     [SerializeField]
+    private GameObject _backgrounds;
+
+    [SerializeField]
     private VerticalLayoutGroup _choiceButtonContainer;
 
     [SerializeField]
     private Button _choiceButtonPrefab;
 
+    List<string> tags;
     void Start()
     {
         StartStory();
@@ -27,6 +32,7 @@ public class InkManager : MonoBehaviour
 
     private void StartStory()
     {
+        //GameObject backgrounds = _gameobjects
         _story = new Story(_inkJsonAsset.text);
         DisplayNextLine();
     }
@@ -36,6 +42,10 @@ public class InkManager : MonoBehaviour
         if (_story.canContinue)
         {
             string text = _story.Continue(); // gets next line
+
+            ParseTags();
+            //tags = _story.currentTags;
+            //Debug.Log(tags);
 
             text = text?.Trim(); // removes white space from text
 
@@ -96,5 +106,42 @@ public class InkManager : MonoBehaviour
         }
     }
 
+    void ParseTags()
+    {
+        tags = _story.currentTags;
 
+        if (tags.Count > 0)
+        {
+            string condition = tags[0];
+            
+            switch(condition.ToLower())
+            {
+                case "black":
+                    SetBackground(condition);
+                    break;
+                case "dorm":
+                    SetBackground(condition);
+                    break;
+                case "lecture":
+                    SetBackground(condition);
+                    break;
+            }
+            
+        }
+    }
+
+    void SetBackground(string bg)
+    {
+        foreach (Transform child in _backgrounds.transform)
+        {
+            if (child.name == bg)
+            {
+                child.gameObject.SetActive(true);
+            }
+            else
+            {
+                child.gameObject.SetActive(false);
+            }
+        }
+    }
 }
