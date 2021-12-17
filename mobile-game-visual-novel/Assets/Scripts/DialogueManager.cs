@@ -87,7 +87,7 @@ public class DialogueManager : MonoBehaviour
         List<Choice> _choices = story.currentChoices;
         for (int i = 0; i < _choices.Count; i++)
         {
-            Debug.Log(i);
+            //Debug.Log(i);
             GameObject temp = Instantiate(customButton, optionPanel.transform);
             //GameObject temp = Instantiate(customButton, optionPanel.transform.GetChild(i));//.transform) ;
             temp.transform.GetChild(0).GetComponent<Text>().text = _choices[i].text;
