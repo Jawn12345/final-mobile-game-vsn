@@ -189,7 +189,7 @@ The school's library has 6 floors including the basement. The lobby and the base
 === library_2fl ===
 You took the elevator to the 2nd floor of the library. The computer labs seems quite empty. You decided to take a seat near the back of the computer lab. 
 You check the homework that your Physics Professor had already uploaded and start working on it. 
-    -> ending
+    -> head_to_class_1
     
 === library_3fl ===
 You took the elevator to the 3rd floor of the library and went into one of the private study rooms. 
@@ -288,7 +288,6 @@ You took the elevator to the 4th floor of the library and start looking for an a
     "Is that Physics? I can help you study. I was a pretty good Physics student." 
     "Uhh sure."
     He moves over to sit next to you and gives you useful tips to help you memorize concepts...
-    
     Before you knew it, it was time to head to your next class. You had a lot of fun talking to James. 
     "I have to head to my next class now." 
     You pack your things and start walking towards the door.
@@ -366,7 +365,14 @@ This class is the Introductory Seminar course that every first year student has 
         
     = mysterious_girl_greeting
     She turns her head to face you. 
-    * {class_0_front_good or class_0_front_neutral} "Thanks for your notes today."
+    * {class_0_front_good or class_0_front_neutral} 
+        -> mysterious_girl_notes
+    
+    = mysterious_girl_notes
+    "Thanks for your notes today."
+        -> mysterious_girl_greeting_continue
+        
+    = mysterious_girl_greeting_continue
     "I didn't catch your name this morning." 
     "Oh, it's you. I almost did not recognize you for a second. My name's Cynthia." 
     "Nice to meet you Cynthia, I'm {playerName}."
@@ -399,7 +405,6 @@ This class is the Introductory Seminar course that every first year student has 
     "It could be a classmate, a stranger, an acquaintance. You need to ask them out somewhere and have them sign their names on the piece paper being passed around." 
     "If you have any questions about the assignment, you can save them for the end of class. I will officially start the lecture now." 
     As she starts discussing tips to make the first move, your mind can't help but wonder who could you possibly ask. 
-    
     After class ends, you head back to your dorm, still thinking about who to ask. 
     -> dorm_1
     
@@ -412,7 +417,7 @@ You close your eyes and think, who should you ask?
 #black
 * {class_1.mysterious_girl_greeting} [Cynthia]
     -> ask_cynthia
-* {class_1.mysterious_girl} [The girl in your class]
+* {class_1.mysterious_girl_ignores} [The girl in your class]
     -> ask_mystery_girl
 * {scenic_good} [James]
     -> ask_james
@@ -533,7 +538,6 @@ You lie in bed scrolling through social media, and playing games.
 #black
 That's all of the story for now!
 I would like to thank everyone for playing. 
+#end
 -> END
-
-
 

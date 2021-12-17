@@ -2,6 +2,7 @@ using Ink.Runtime;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class InkManager : MonoBehaviour
 {
@@ -118,7 +119,7 @@ public class InkManager : MonoBehaviour
         if (tags.Count > 0)
         {
             string condition = tags[0];
-            Debug.Log(condition);
+            //Debug.Log(condition);
             switch(condition.ToLower())
             {
                 case "black":
@@ -141,6 +142,9 @@ public class InkManager : MonoBehaviour
                     break;
                 case "theme1":
                     SetAudio(condition);
+                    break;
+                case "end":
+                    SceneManager.LoadScene("TitleScene");
                     break;
             }
             
