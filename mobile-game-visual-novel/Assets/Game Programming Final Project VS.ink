@@ -1,10 +1,10 @@
 VAR playerName = "Jack"
 
-#black
 Chapter One: First Day
 -> one
 
 === one ===
+#black
 #theme1
 Ding ding ding! Ding ding ding!
 ("What's that sound???")
@@ -396,42 +396,141 @@ This class is the Introductory Seminar course that every first year student has 
     Professor Ramone continues on, "Before we get started, I will hand out your first homework assignment. This will be due at the start of our next class, in 2 days." 
     She passes a stack of papers to one of the students sitting in the front row. 
     "Your first assignment will be relatively simple. All you need to do is to ask someone that you do not know really well to go somewhere." 
-    "It could be a classmate, a stranger, an acquantaince. You need to ask them out somewhere and have them sign their names on the piece paper being passed around." 
+    "It could be a classmate, a stranger, an acquaintance. You need to ask them out somewhere and have them sign their names on the piece paper being passed around." 
     "If you have any questions about the assignment, you can save them for the end of class. I will officially start the lecture now." 
     As she starts discussing tips to make the first move, your mind can't help but wonder who could you possibly ask. 
     
+    After class ends, you head back to your dorm, still thinking about who to ask. 
+    -> dorm_1
     
+=== dorm_1 ===
+#dorm
+"Hello?" You called out, but there was no response. It seems like your suitemate is not home tonight. 
+You lie down on your bed, still wondering about the assignment. 
+You think about the people that you've met today. 
+You close your eyes and think, who should you ask?
+#black
+* {class_1.mysterious_girl_greeting} [Cynthia]
+    -> ask_cynthia
+* {class_1.mysterious_girl} [The girl in your class]
+    -> ask_mystery_girl
+* {scenic_good} [James]
+    -> ask_james
+* {scenic and not scenic_good} [That guy you bumped into]
+    -> ask_bumped_guy
+* {dorm_0} [Your suitemate]
+    -> ask_suitemate
+* [No one]
+    -> ask_bumped_guy
+
+
+=== ask_cynthia ===
+"I've made up my mind. I'll ask Cynthia!"
+The following day.
+#classroom
+You go to find Cynthia and see her sitting in front of one of the classrooms.
+"Hey, so this is a weird question, but would you like to grab a cup of coffee together?"
+* {class_1.mysterious_girl_greeting and class_0_front_good}
+    -> cynthia_good
+* {class_1.mysterious_girl_greeting and class_0_front_neutral}
+    -> cynthia_bad
+    
+    = cynthia_good
+    She looks at you. 
+    It is as if she is pondering something. 
+    Your heart beats nervously as you prepare for her response. 
+    "Hmm..."
+    "Sorry..."
+    Your heart felt as if it had dropped to the ground.
+    "Sorry for the long pause." She smiles. "I would love to grab coffee together. Tomorrow after classes?"
+    A mix of relief and disbelief washes over your face. "Wait really?"
+    "Yes." She responds. 
+    You couldn't believe it. You managed to ask someone out successfully! 
+    You two then exchanged phone numbers before parting ways. 
+        -> ending
+        
+    = cynthia_bad
+    She looks at you. 
+    It is as if she is pondering something. 
+    Your heart beats nervously as you prepare for her response. 
+    "Hm..."
+    "This is for the assignment right? Sorry, I don't really like coffee and I already asked someone."
+    She then walks off. 
+    Your heart sinks as you see her slowly walking away...
+-> ending
+
+=== ask_mystery_girl ===
+"I've made up my mind. I'll ask the girl in my class!"
+The following day.
+#classroom
+You find the girl that was in your class. 
+"Hey...this is a bit of a weird question, but would you like to study Physics at the library together?"
+She looks at you...
+and then walks off. 
+    -> ending
+    
+=== ask_james ===
+"I've made up my mind. I'll ask James!"
+The following day.
+#library
+You go to find James at the library. 
+You see him sitting in one of the chairs and you walk up to him. 
+"Hey James, so I have a question I would like to ask you. Would you like to grab brunch some time?"
+He looks up to stare at you. 
+* {scenic_good and library_4fl.library_james} 
+    -> james_good
+* {scenic_good and not library_4fl.library_james}
+    -> james_bad
+    
+    = james_good
+    "{playerName}..."
+    Your heart beats nervously. You can feel your sweat trickling down your back.
+    "I would love to. Can I have your phone number then? I know a good place that we can go to. Do you want to go right now if you don't have class?" 
+    You stare at him in shock. 
+    He looks at you anxiously.
+    "Yes! I would love to." You quickly respond.
+    Screw class! You got a date to get to. 
+    You exchange numbers and you both walk off to his recommended brunch place. 
+        -> ending
+        
+    = james_bad 
+    "I'm kinda busy at the moment. Maybe next time?"
+    "No worries, I completely understand!" You quickly nod before walking away. 
+    To be fair, you only bumped into him once, why would he go out with you?
+    -> ending
+    
+=== ask_bumped_guy ===
+"I've made up my mind. I'll ask the person I bumped into on my way to Physics class!"
+The following day.
+#scenic
+You find the person again walking through the scenic route you like going through.
+You walk up to him.
+"Hey, sorry for bumping into yesterday, but would you like to grab a drink together?"
+You stare at him anxiously. 
+"Uhh...sorry. I don't know you that well..."
+He then excuses himself and leaves, leaving you by your lonesome self. 
+    -> ending
+    
+=== ask_suitemate ===
+"I've made up my mind. I'll ask Josh!"
+The following day.
+#dorm
+You knock on Josh's door. 
+He opens the door rubbing his eyes, "Do you know what time it is? What's up?"
+You take a deep breath. 
+"Josh, will you go have dinner with me tonight?"
+Josh's eyes blink wide open. 
+"Hm..sure. Why not?"
+    -> ending
+    
+=== ask_no_one ===
+"I've made up my mind. I'll ask no one!"
+The following day.
+You lie in bed scrolling through social media, and playing games.
 -> ending
 
 === ending
-
+#black
+That's all of the story for now!
+I would like to thank everyone for playing. 
 -> END
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

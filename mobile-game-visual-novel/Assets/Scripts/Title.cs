@@ -9,8 +9,10 @@ public class Title : MonoBehaviour
 
     //[SerializeField]
     public Button _choiceButton;
+    public AudioSource startingMusic;
     void Start()
     {
+        startingMusic.Play();
         _choiceButton.onClick.AddListener(() => LoadGame());
     }
 

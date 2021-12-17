@@ -31,7 +31,7 @@ public class InkManager : MonoBehaviour
     public AudioSource _theme;
     void Start()
     {
-        //_theme.Play();
+        _theme.Play();
         StartStory();
     }
 
@@ -136,6 +136,9 @@ public class InkManager : MonoBehaviour
                 case "scenic":
                     SetBackground(condition);
                     break;
+                case "library":
+                    SetBackground(condition);
+                    break;
                 case "theme1":
                     SetAudio(condition);
                     break;
@@ -166,11 +169,11 @@ public class InkManager : MonoBehaviour
         {
             if (child.name == aud)
             {
-                child.GetComponent<AudioSource>().Play();
+                //child.GetComponent<AudioSource>().Play();
             }
             else
             {
-                child.GetComponent<AudioSource>().Pause();
+                //child.GetComponent<AudioSource>().Pause();
             }
         }
     }
