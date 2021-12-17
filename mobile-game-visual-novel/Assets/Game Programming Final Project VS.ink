@@ -421,7 +421,7 @@ You close your eyes and think, who should you ask?
 * {dorm_0} [Your suitemate]
     -> ask_suitemate
 * [No one]
-    -> ask_bumped_guy
+    -> ask_no_one
 
 
 === ask_cynthia ===
@@ -534,3 +534,6 @@ You lie in bed scrolling through social media, and playing games.
 That's all of the story for now!
 I would like to thank everyone for playing. 
 -> END
+
+
+
