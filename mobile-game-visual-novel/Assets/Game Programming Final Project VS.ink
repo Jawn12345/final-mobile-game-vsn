@@ -1,10 +1,11 @@
 VAR playerName = "Jack"
 
+#black
 Chapter One: First Day
 -> one
 
 === one ===
-#black
+#theme1
 Ding ding ding! Ding ding ding!
 ("What's that sound???")
 DINGGG!!!
@@ -46,12 +47,13 @@ You are a first year Game Design student attending Fall University.
 Luckily, you were living on campus. Otherwise, attending your first college class would have been a pipe dream.
 Since you are already late to class, should you take the scenic route?
 
-+ Take the scenic route.
++ [Take the scenic route.]
     -> scenic
-+ Take the regular route. 
++ [Take the regular route.]
     -> non_scenic
 
 === scenic ===
+#scenic
 "I'm already going to be late, why not enjoy the walk to class while I'm at it?" 
 You turned your head to look at the falling leaves. 
 CRASH.
@@ -119,6 +121,7 @@ You listen to your Professor talk about balls dropping from cliffs but you could
 You quickly walk down the stairs until you're near the front of the room and squeeze through people until you get to the empty seat and sit down. 
 You take out the notebook and pen, ready to take notes to make up for missing the first 25 minutes of class. 
 Your Professor is performing a live demonstration of the effects of gravity on a ball and a crumpled piece of paper. 
+An hour later. 
 //play students talking sound, signalling end of class
 "That is all for today! Class is dismissed," your Professor says as everyone starts packing and leaving. 
 As you're getting up and ready to leave, someone taps you on your shoulder. 
@@ -128,7 +131,7 @@ You turn around to see a beautiful girl with glasses staring at you.
     -> class_0_front_good
 * { grab }
     "Yeah. I accidentally overslept."
-    "Oh...that's pretty bold of you," she chuckles. 
+    "Oh...that's pretty bold of you," she snickers. 
     -> class_0_front_neutral
 * { crash }
     "I accidentally broke my beloved mug this morning."
@@ -329,6 +332,7 @@ Before you knew it, it was time to head to your next class.
     -> class_1
     
 === dorm_0 ===
+#dorm
 When you arrive at your dorm and was about to head into your room, you see your suitemate, and only friend, pop his head out of his room. 
 "Hey! Welcome back. I heard you scrambling this morning. Is everything okay? How was your first class? Do you need coffee?"
 "Woah woah woah! Slow down, Josh. But yes, good, and no to your questions."
@@ -343,11 +347,85 @@ Unfortunately, you got distracted by corgi butts and spent the whole time lookin
 === class_1 ===
 #classroom
 You arrived at the entrance of your next class. 
+This class is the Introductory Seminar course that every first year student has to take but honestly, you have no idea what the class is going to be about.
+* {class_0_front} 
+    -> mysterious_girl
+* {not class_0_front}
+    You find an empty desk and sit down.
+    -> class_1_starts
+    
+    = mysterious_girl
+    As you're deciding where to sit, you see the girl you talked to this morning. 
+    You walk over to her but your awkward self doesn't know what to say. 
+    * "Hey!"
+        -> mysterious_girl_greeting
+    * "Blurheuh"
+        -> mysterious_girl_ignores
+    * "..."
+        -> mysterious_girl_ignores
+        
+    = mysterious_girl_greeting
+    She turns her head to face you. 
+    * {class_0_front_good or class_0_front_neutral} "Thanks for your notes today."
+    "I didn't catch your name this morning." 
+    "Oh, it's you. I almost did not recognize you for a second. My name's Cynthia." 
+    "Nice to meet you Cynthia, I'm {playerName}."
+    She nods. Her face expressed no signs of emotions. It was difficult to tell what she was thinking.
+    You tried to think of something to keep the conversation going. 
+    "So...uh what major are you in?" 
+    "I'm a Physics major and a Computer Science minor," she replies. 
+    "Wowww. That's impressive. I'm a Game Design major."
+    She raises an eyebrow. "You're a Game Design major taking Introductory Physics?"
+    "I thought the class would be fun and I needed a Science elective either way."
+        -> class_1_starts
+        
+    = mysterious_girl_ignores
+    No response. 
+    She didn't even turn her head.
+    Dejected, you walk away and sit at another desk. 
+        -> class_1_starts
+        
+    = class_1_starts
+    The Professor walks in. You could hear her 4 inch heels clattering as she walks to the front of the room. 
+    "Hello! Welcome to Introductory Seminar. I am your Professor, Linda Takahashi. Please make sure you are in the right section and class." 
+    She pauses to write the course and section number on the board, as well as her contact information. 
+    "If you need to reach me, you can contact me through email and I will try to respond within 1-2 business days."
+    "I'm pretty sure many of you are wondering what this class is about and why is the College requiring everyone to take it."
+    "Every Professor has a different method to teach the course; however, the goal is to have students develop interpersonal relationships, so that students can continue on in life and develop more meaningful connections."
+    Oh..this is what the class is about. For some reason, you feel really uneasy. 
+    Professor Ramone continues on, "Before we get started, I will hand out your first homework assignment. This will be due at the start of our next class, in 2 days." 
+    She passes a stack of papers to one of the students sitting in the front row. 
+    "Your first assignment will be relatively simple. All you need to do is to ask someone that you do not know really well to go somewhere." 
+    "It could be a classmate, a stranger, an acquantaince. You need to ask them out somewhere and have them sign their names on the piece paper being passed around." 
+    "If you have any questions about the assignment, you can save them for the end of class. I will officially start the lecture now." 
+    As she starts discussing tips to make the first move, your mind can't help but wonder who could you possibly ask. 
+    
+    
 -> ending
 
 === ending
 
 -> END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -19,14 +19,19 @@ public class InkManager : MonoBehaviour
     private GameObject _backgrounds;
 
     [SerializeField]
+    private GameObject _sounds;
+
+    [SerializeField]
     private VerticalLayoutGroup _choiceButtonContainer;
 
     [SerializeField]
     private Button _choiceButtonPrefab;
 
     List<string> tags;
+    public AudioSource _theme;
     void Start()
     {
+        //_theme.Play();
         StartStory();
     }
 
@@ -109,11 +114,11 @@ public class InkManager : MonoBehaviour
     void ParseTags()
     {
         tags = _story.currentTags;
-
+        
         if (tags.Count > 0)
         {
             string condition = tags[0];
-            
+            Debug.Log(condition);
             switch(condition.ToLower())
             {
                 case "black":
@@ -124,6 +129,15 @@ public class InkManager : MonoBehaviour
                     break;
                 case "lecture":
                     SetBackground(condition);
+                    break;
+                case "park":
+                    SetBackground(condition);
+                    break;
+                case "scenic":
+                    SetBackground(condition);
+                    break;
+                case "theme1":
+                    SetAudio(condition);
                     break;
             }
             
@@ -144,4 +158,21 @@ public class InkManager : MonoBehaviour
             }
         }
     }
+
+    void SetAudio(string aud)
+    {
+        Debug.Log(aud);
+        foreach (Transform child in _sounds.transform)
+        {
+            if (child.name == aud)
+            {
+                child.GetComponent<AudioSource>().Play();
+            }
+            else
+            {
+                child.GetComponent<AudioSource>().Pause();
+            }
+        }
+    }
+
 }
